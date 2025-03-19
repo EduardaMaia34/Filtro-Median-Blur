@@ -31,10 +31,11 @@ img = cv2.imread(caminho_arquivo)
 
 # Aplicando o filtro de mediana da biblioteca OpenCV que é importada como cv2 e atribuindo a variavel median utilizando uma mascara 5x5﻿
 median = cv2.medianBlur(img,5)
+img_suavizada = cv2.GaussianBlur(median, (5,5), 0)
 
 # comparacao
 plt.subplot(121),plt.imshow(img),plt.title('Original')
 plt.xticks([]), plt.yticks([])
-plt.subplot(122),plt.imshow(median),plt.title('Mediana')
+plt.subplot(122),plt.imshow(img_suavizada),plt.title('Mediana')
 plt.xticks([]), plt.yticks([])
 plt.show()
